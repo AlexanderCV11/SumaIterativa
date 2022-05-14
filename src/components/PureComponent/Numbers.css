@@ -1,0 +1,49 @@
+.Numbers {
+    padding: 10px;
+    background-color: chocolate;
+}
+
+.Numbers input[type=number]::-webkit-inner-spin-button
+{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.Numbers input {
+    width: 150px;
+    height: 60px;
+    font-size: 50px;
+    outline: none;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: rgb(58, 29, 8);
+    color: white;
+    
+}
+
+.Numbers ul {
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    width: 172px;
+    background-color: rgb(213, 250, 2);
+    color: rgb(3, 0, 0);
+    font-size: 50px;
+}
+
+.Numbers ul li {
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding: 10px;
+}
+
+.Numbers ul li:first-child {
+    border-top: none;
+}
+
+.Numbers ul li:last-child {
+    border-bottom: 1px solid #ccc;
+}
+
+
