@@ -5,7 +5,7 @@ class Result extends Component {
     render() {
         return (
             <li>
-                {this.props.result}   
+                La suma es: {this.props.result}   
             </li>
         );
     }
