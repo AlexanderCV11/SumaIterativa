@@ -8,7 +8,7 @@ class Calculator extends Component {
             number1: 5,
             number2: 4,
             results: 0,
-            selectorV: '',
+            selectorV: 'Opera',
         }
     }
     
@@ -29,38 +29,6 @@ class Calculator extends Component {
         })
     }
     
-    suma = () => {
-
-        const result = this.state.number1 + this.state.number2; 
-
-        this.setState({
-            results: result,
-        })
-    }
-    resta = () => {
-
-        const result = this.state.number1 - this.state.number2; 
-
-        this.setState({
-            results: result,
-        })
-    }
-    multiplicacion = () => {
-
-        const result = this.state.number1 * this.state.number2; 
-
-        this.setState({
-            results: result,
-        })
-    }
-    division = () => {
-
-        const result = this.state.number1 / this.state.number2; 
-
-        this.setState({
-            results: result,
-        })
-    }
 
     handleChange = e => {    
         this.setState({
@@ -68,22 +36,35 @@ class Calculator extends Component {
         })
     }
 
+
     operacion = e => {
         switch(this.state.selectorV){
             case 'suma':
-                this.suma();
+                const suma = this.state.number1 + this.state.number2; 
+                this.setState({
+                    results: suma
+                })
             break;
-            case '-': 
-                this.results = this.state.number1 - this.state.number2
+            case 'resta': 
+            const resta = this.state.number1 - this.state.number2; 
+            this.setState({
+                results: resta
+            })
             break;
-            case '*': 
-            this.results = this.state.number1 * this.state.number2
+            case 'producto': 
+            const producto = this.state.number1 * this.state.number2; 
+            this.setState({
+                results: producto
+            })
             break;
-            case '/': 
-            this.setState({results: this.state.number1 / this.state.number2})
+            case 'division': 
+            const division = this.state.number1 / this.state.number2; 
+            this.setState({
+                results: division
+            })
             break;
         }
-        console.log(this.state.results)
+        console.log(this.state.selectorV)
     }
 
     render() {
@@ -96,9 +77,9 @@ class Calculator extends Component {
                 />
                 <select value={this.state.selectorV} onChange={this.handleChange}>
                     <option value="suma">+</option>
-                    <option value="-">-</option>
-                    <option value="*">*</option>
-                    <option value="/">/</option>
+                    <option value="resta">-</option>
+                    <option value="producto">*</option>
+                    <option value="division">/</option>
                 </select>
                 <input 
                     type="text" 
